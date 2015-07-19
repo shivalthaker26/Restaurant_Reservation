@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Customer!</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+  	<link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
+  	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  	<link rel="stylesheet" href="static/css/style.css">
+  	<link rel="stylesheet" type="text/css" href="static/css/other_style.css">
+  	<link rel="stylesheet" type="text/css" media="screen" href="static/css/bootstrap-datetimepicker.min.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="container-heading">
+				<h1/>Smokin' Hot!
+		</div>
+		<ul class="nav nav-pills">
+	      <li><a href="#">About</a></li>
+	      <li><a href="#">Reservations &amp; Facilities</a></li>
+	      <li><a href="#">Contact Us</a></li>
+    	</ul>
+		<div class="container padding-top-10">
+			
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="text-center font-feature "/>We want you to Register for Reservation!
+				</div>
+				<div class="panel-body">
+					<form>
+						<div class="form-group">
+							<label for="first_name" class="control-label font-feature">Name:</label>
+							<div class="row padding-top-10">
+								<div class="col-md-6">
+
+									<input type="text" class="form-control" id="first_name" placeholder="First Name"/>
+								</div>
+								<div class="col-md-6">
+									<input type="text" class="form-control" id="last_name" placeholder="Last Name"/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="country_selector" class="control-label font-feature">Contact Details:</label>
+							<div class="row padding-top-10">
+								<div class="col-md-2">
+									<select id="country_selector" class="form-control selectdropdownelement-native" >
+										<option value="US" selected="selected" />United States +1
+										<option value="IN"/>India +91
+										<option value="UK"/>United Kingdom +44
+										<option value="CA"/>Canada +1
+									</select>
+								</div>
+								<div class="col-md-4">
+									<input type="text" class="form-control phone-number" id="customer_phone_number"  placeholder="Phone Number"/>
+								</div>
+								<div class="col-md-6">
+									<input type="email" class="form-control" id="customer_email" placeholder="Email" name="email">
+								</div>
+							</div>
+						</div>
+						
+						
+						<div class="form-group">
+							<label for="customer_date" class="control-label font-feature">Choose Date and time:</label>
+							<div class="row padding-top-10">
+								<div class="col-md-3">
+									<input type='date' class="form-control" id="customer_date" />
+								</div>
+
+								<div class="col-md-3">
+									<input type="time" class="form-control" id="customer_time"/>
+								</div>
+							
+								<div class="col-md-3">
+									<input type="number" class="form-control" id="no_of_guests" placeholder="No of Guests"/>
+								</div>
+								<div class="col-md-3 padding-top-10 font-feature">
+									<label for="radio_yes" class="control-label">Is this your First Visit?</label>
+									<input type="radio" name="visiting_answer" id="radio_yes"/>Yes
+									<input type="radio" name="visiting_answer" id="radio_no"/>No
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row padding-top-10 font-feature">
+								<div class="col-md-6">
+									<textarea name="specialRequests" id="special_requests_customer" class="form-control" rows="1"placeholder="Add a special Request(Optional)"></textarea>
+								</div>
+								<div class="col-md-6 ">
+									<div class="checkbox">
+	  									<label><input type="checkbox" value="">Yes, I would like to receive email notifications from this restaurant</label>
+
+									</div> 
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="row padding-top-10 font-feature">
+								<div class="col-md-3">
+								</div>
+								<div class="col-md-3 text-center">
+									<button type="button" id="complete_reservation_btn" class="btn btn-success btn-block">Complete Reservation</button>
+								</div>
+								<div class="col-md-3">
+									<button type="button" id="existing_reservation" class="btn btn-link btn-block">Change an Existing Reservation? </button>
+								</div>
+							</div>
+						</div>
+
+					
+						
+
+
+					</form>				
+				</div>
+			</div>
+		</div>
+	<div>
+
+
+</body>
+</html>

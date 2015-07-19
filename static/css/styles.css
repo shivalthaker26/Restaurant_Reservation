@@ -1,0 +1,15 @@
+.modal-footer {   border-top: 0px; }
+
+.font-feature
+{
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+	color: #000000 ;
+	font-weight: 100;
+}
+
+
+<button class="btn btn-primary btn-lg btn-block  ">Sign In</button>
+              <span class="pull-right"><a href="#">Register</a></span><span><a href="#">Need help?</a></span>
+            </div>
+            </div>

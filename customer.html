@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Customer!</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+  	  <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
+  	<link rel="stylesheet" href="static/css/style.css">
+
+
+</head>
+<body>
+  <div class="container">
+  	<h1>Smokin' Hot!</h1>
+    <ul class="nav nav-pills">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Reservations &amp; Facilities</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+	<div >
+	<div class="container">
+		<form onSubmit={}>
+			<h3 class='text-center'>Make a Reservation</h3>
+				<div class='row'>
+					<input class='col-md-6' type="text" id="first_name" placeholder="First Name"/>
+					<input class='col-md-6' type="text" id="last_name" placeholder="Last Name" /><br>		
+				</div>
+						
+			<div id="mobile_phone_dropdown" class="dropdown">
+				<input type="tel" name="usrtel" id="phone_number" class="phone-number form-control" placeholder="Phone Number" />		
+		
+				<select name="phoneNumber_selection_dropDown" id="phoneNumber_kind_select_dropDown" class="selectdropdownelement-native">
+					<option value="2" show-ext="yes">Phone</option>
+					<option selected="selected" value="4">Mobile</option>
+				</select>
+			</div><br>
+			
+			Date of Reservation:<input type="date">
+			Time of Reservation:<input type="time" id="+time_of_reservation" /><br><br>
+			<input class="form-control" type="number" id="no_of_ppl" min="1" placeholder="Number of Guests"/><br><br>
+			
+	  		<input class="form-control" type="email" name="email" id="customer_email" placeholder="Email"/><br><br>
+	  		
+	  		<input class="form-control" type="text" placeholder="Any Special Requests(optional)" id="special_request_text"/><br><br>
+
+	  		<div class="radio">
+	  		Are you visiting this restaurant for first time?
+	  			<label><input type="radio" name="visiting_answer">Yes</label>
+	  			<label><input type="radio" name="visiting_answer">No</label>
+	  		</div>	
+
+			<div class="checkbox">
+	  		
+	  			<label><input type="checkbox" value="">Yes, I would like to receive email messages from this restaurant</label>
+
+			</div> 
+			<button type="button" class="btn btn-success">Submit</button>
+		</form>
+	</div>
+	</div>
+</body>
+</html>
