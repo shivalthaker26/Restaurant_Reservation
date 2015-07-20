@@ -1,5 +1,5 @@
-function myFunction()
-{
-	console.log("Redirecting");
-	window.location.replace("welcome_admin.html");
-}
+$(function(){
+    $('#admin_signin').click(function(){
+        window.location='../welcome_admin.html'
+    });
+});
