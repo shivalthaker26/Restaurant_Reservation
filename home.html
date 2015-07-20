@@ -24,8 +24,16 @@
 		          <li class="active"><a href="home.html">Home</a></li>
 		          <li><a href="#about">About</a></li>
 		          <li><a href="#contact">Contact</a></li>
-		          <li><a href="new_customer.html">Reservations</a></li>
-		          <li class="modal"><a href="#" data-toggle="modal" data-target="#loginModal">Admin Login</a></li>
+		          <li class="dropdown">
+		          	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reservations<span class="caret"></span></a>
+		          	<ul class="dropdown-menu">
+		          		<li><a href="new_customer.html">Create a Reservation</a></li>
+		          		<li><a href="#">Manage a Reservation</a></li>
+		          		<li><a href="#">Change a Reservation</a></li>
+		          		<li><a href="#">Cancel a Reservation</a></li>
+		          	</ul>
+		          </li>
+		          <li class="modal"><a data-toggle="modal" data-target="#loginModal">Admin Login</a></li>
 		        </ul>
 		      </div>
 		    </div>
@@ -49,7 +57,7 @@
             <div class="form-group">
               <div class="row">
                 <div class="col-md-12 text-center">
-                  <button class="btn btn-primary btn-lg btn-block">Sign In</button>
+                  <button onSubmit="myFunction()" class="btn btn-primary btn-lg btn-block" > Sign In</button>
                 </div>
              </div>
             </div>
@@ -76,5 +84,6 @@
 
 <script src="src/js/jquery.min.js"></script>
 		<script src="src/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="src/js/form_submit.js"></script>
 </body>
 </html>
