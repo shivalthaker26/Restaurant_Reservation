@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="reservationApp">
 <head>
 	<title>Customer!</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
@@ -38,7 +38,7 @@
 		        </ul>
 		      </div>
 		    </div>
-		</div>
+    </div>
 	<div class="container margin-top-10">
 		
 		<div class="container padding-top-10">
@@ -46,22 +46,26 @@
 
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="text-center font-feature "/>We want you to Register for Reservation!
+					<h3 class="text-center font-feature "/> Please Enter your details below:
 				</div>
 				<div class="panel-body">
-					<form>
-						<div class="form-group">
-							<label for="first_name" class="control-label font-feature">Name:</label>
+					<form name="userForm" ng-submit="submitForm()" novalidate>
 							<div class="row padding-top-10">
 								<div class="col-md-6">
-
-									<input type="text" class="form-control" id="first_name" placeholder="First Name"/>
+									<div class="form-group" ng-class="{ 'has-error' : userForm.first_name.$invalid && !userForm.first_name.$pristine }">
+										<label for="first_name" class="control-label font-feature">Name:</label>
+										<input type="text" name="first_name" class="form-control" id="first_name"  ng-model="user.first_name" placeholder="First Name" required>
+										<p ng-show="userForm.first_name.$invalid && !userForm.first_name.$pristine" class="help-block">Your First Name is required.</p>
+									</div>
 								</div>
 								<div class="col-md-6">
-									<input type="text" class="form-control" id="last_name" placeholder="Last Name"/>
+									<div class="form-group" ng-class="{ 'has-error' : userForm.last_name.$invalid && !userForm.last_name.$pristine }">
+										<label for="last_name" class="control-label font-feature">&nbsp;</label>
+									    <input type="text"ng-model="user.last_name" name="last_name" class="form-control" id="last_name" placeholder="Last Name" required/>
+										<p ng-show="userForm.last_name.$invalid && !userForm.last_name.$pristine" class="help-block">Your Last Name is required.</p>
+									</div>
 								</div>
 							</div>
-						</div>
 						<div class="form-group">
 							<label for="country_selector" class="control-label font-feature">Contact Details:</label>
 							<div class="row padding-top-10">
@@ -73,11 +77,14 @@
 										<option value="CA"/>Canada +1
 									</select>
 								</div>
-								<div class="col-md-4">
-									<input type="text" class="form-control phone-number" id="customer_phone_number"  placeholder="Phone Number"/>
+								<div class="col-md-4 form-group" ng-class="{ 'has-error' : userForm.phone_number.$invalid && !userForm.phone_number.$pristine }">
+									<input type="text" ng-model="user.phone_number" name="phone_number" class="form-control phone-number" id="customer_phone_number"  placeholder="Phone Number" ng-maxlength="10"
+                                           ng-minlength="10" ng-pattern="/^\d{10}$/" required />
+                                    <p class="help-block" ng-show="userForm.phone_number.$invalid && !userForm.phone_number.$pristine"/>Your Phone number should be of 10 digits
 								</div>
-								<div class="col-md-6">
-									<input type="email" class="form-control" id="customer_email" placeholder="Email" name="email">
+								<div class="col-md-6 form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+									<input ng-model="user.email" type="email" class="form-control" id="customer_email" placeholder="Email" name="email">
+                                    <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
 								</div>
 							</div>
 						</div>
@@ -87,7 +94,13 @@
 							<label for="customer_date" class="control-label font-feature">Choose Date and time:</label>
 							<div class="row padding-top-10">
 								<div class="col-md-3">
-									<input type='date' class="form-control" id="customer_date" />
+                                    <p class="input-group">
+                                        <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="status.opened" min-date="minDate" max-date="'2020-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                                          <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                          </span>
+                                    </p>
+
 								</div>
 
 								<div class="col-md-3">
@@ -139,7 +152,7 @@
 				</div>
 			</div>
 		</div>
-	<div>
+	</div>
 
 
 <div id="loginModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
@@ -183,8 +196,13 @@
   </div>
 </div>
 
-<script src="src/js/jquery.min.js"></script>
-		<script src="src/js/bootstrap.min.js"></script>
+		<script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+		<script src="https://code.angularjs.org/1.4.3/angular-messages.js"></script>
+		<script src="https://code.angularjs.org/1.4.3/angular-route.min.js"></script>
+        <script src="src"
+		<script src="src/js/app/app.js"></script>
+		<script src="src/js/controllers/mainCtrl.js"></script>
+		<script src="src/js/services/service1.js"></script>
 
 </body>
 </html>
